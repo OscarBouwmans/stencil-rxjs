@@ -1,6 +1,6 @@
 {
   "name": "stencil-rxjs",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Utilities to integrate RxJS workflows into Stencil components.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
