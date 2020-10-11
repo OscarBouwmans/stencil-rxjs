@@ -1,5 +1,5 @@
 import { ComponentInterface } from '@stencil/core';
-import { from, ObservableInput, Subject, Subscription } from 'rxjs';
+import { from, ObservableInput, Subscription } from 'rxjs';
 
 export function Subscribe<T>(source: ObservableInput<T>) {
     const source$ = from(source);
