@@ -1,0 +1,32 @@
+{
+  "name": "stencil-rxjs",
+  "version": "1.0.0",
+  "description": "Utilities to integrate RxJS workflows into Stencil components.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OscarBouwmans/stencil-rxjs.git"
+  },
+  "keywords": [
+    "Stencil",
+    "StencilJS",
+    "RxJS",
+    "Observable",
+    "Decorator"
+  ],
+  "author": "Oscar Bouwmans",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OscarBouwmans/stencil-rxjs/issues"
+  },
+  "homepage": "https://github.com/OscarBouwmans/stencil-rxjs#readme",
+  "devDependencies": {
+    "@stencil/core": "^2.0.3",
+    "@types/jest": "^26.0.14",
+    "rxjs": "^6.6.3",
+    "typescript": "^4.0.3"
+  }
+}
