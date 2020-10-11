@@ -3,7 +3,6 @@ import { from, ObservableInput, Subject, Subscription } from 'rxjs';
 
 export function Subscribe<T>(source: ObservableInput<T>) {
     const source$ = from(source);
-    const sourceAsSubject = source as Subject<T>;
     let subscription: Subscription;
 
     let value: T | undefined;
@@ -26,7 +25,7 @@ export function Subscribe<T>(source: ObservableInput<T>) {
             subscription?.unsubscribe();
             subscription = source$.subscribe({
                 next: (newValue) => {
-                    value = newValue;
+                    target[propertyKey] = newValue;
                     emissions += 1;
                 },
                 error: (err) => {
@@ -48,17 +47,5 @@ export function Subscribe<T>(source: ObservableInput<T>) {
 
             return disconnectedCallback?.call?.(this);
         }
-  
-        Object.defineProperty(target, propertyKey, {
-            get() {
-                return value;
-            },
-            set(nextValue: T) {
-                if (typeof sourceAsSubject?.next !== 'function') {
-                    throw new TypeError(`Unexpected type '${typeof sourceAsSubject?.next}', expected 'function'. Unable to set the value of property '${propertyKey}'. Perhaps it is not a Subject?`);
-                }
-                sourceAsSubject.next(nextValue);
-            }
-        }); 
     }
   }
