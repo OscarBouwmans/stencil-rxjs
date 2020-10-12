@@ -10,14 +10,14 @@ This package is very new and incomplete. The idea is to create something like th
 import { Component, Prop, h } from "@stencil/core";
 import { timer } from "rxjs";
 
-const count = timer(0, 1000);
+const count$ = timer(0, 1000);
 
 @Component({
   tag: "my-component",
   styleUrl: "my-component.css",
 })
 export class MyComponent {
-  @Subscribe(count) count: number;
+  @Subscribe(count$) count: number;
 
   render() {
     return <div>{this.count}</div>;
